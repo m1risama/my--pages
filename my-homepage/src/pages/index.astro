@@ -14,7 +14,7 @@
 
 <body class="bg-gray-50 min-h-screen">
     <!-- ヘッダー -->
-    <header class="bg-cyan-500 py-6 shadow-md">
+    <header class="bg-cyan-500 py-6 shadow-md relative z-10">
         <div class="container mx-auto px-4 max-w-3xl">
             <h1 class="text-3xl font-bold text-left">
                 <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
@@ -23,11 +23,12 @@
     </header>
 
     <!-- メインコンテンツ -->
-    <main class="container mx-auto px-4 py-12 max-w-3xl">
+    <main class="container mx-auto px-4 py-12 max-w-3xl overflow-hidden">
         <div class="flex flex-col">
             
             <!-- 1. 自己紹介 -->
-            <div class="mb-16">
+            <!-- 追加: opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate -->
+            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-4">自己紹介</h2>
                 <p class="text-gray-700 leading-relaxed text-lg">
                     電気通信大学情報理工学域Ⅱ類M科 MMA,VLLに所属<br>
@@ -36,7 +37,7 @@
             </div>
 
             <!-- 2. SNS -->
-            <div class="mb-16">
+            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate" style="transition-delay: 100ms;">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">SNS</h2>
                 
                 <p class="text-lg text-gray-700 mb-4">・X(旧twitter)</p>
@@ -67,7 +68,7 @@
             </div>
 
             <!-- 3. やったこと -->
-            <div class="mb-16">
+            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     やったこと
                 </h2>
@@ -91,7 +92,7 @@
             </div>
 
             <!-- 4. 誕生日カウントダウン -->
-            <div class="mb-16">
+            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     誕生日まで
                 </h2>
@@ -121,125 +122,106 @@
                         </div>
                     </div>
                     
-                    
+                    <p id="bday-message" class="mt-4 text-cyan-600 font-medium h-6"></p>
                 </div>
             </div>
 
             <!-- 5. 他の人のサイト -->
-            <div>
+            <div class="opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     他の人のサイト
                 </h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     
-                    <!-- リンクの追加・変更は、この <a> 〜 </a> をコピペして増やせます！ -->
-                    <!-- href="#" の部分をお友達のURLに変更してください -->
-                    <!-- 飛ぶ先のリンクアドレス (href) -->
-<a href="https://shiori-02-14.github.io/Homepage/index.html" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/shiori_02_14_" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            しおり🔖
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
-<a href="https://cotton7.me/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/cotton0025" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            こっとん
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
-<a href="https://toramutton.me/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/ToraMutton" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            トラマト
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
-<a href="https://memo.shibadogcap.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/4ba_ba_baba" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            柴犬被り
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
-<a href="https://thunfasky.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/ThunFasky" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            ThunFasky
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
-<a href="https://ctes091x.net/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/ctes091x" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            綿糸てせ
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
-<a href="https://www.foriio.com/ia-cg" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/twubcThcUO47Kth" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            あい
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
-<a href="https://polythos.net/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
-    <div class="flex items-center space-x-4">
-        
-        <!-- ▼ 画像アドレス(src)に unavatar.io を使う！ -->
-        <img src="https://unavatar.io/twitter/Polythos" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
-        
-        <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
-            ぽりとす
-        </span>
-    </div>
-    <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
-</a>
+                    <a href="https://shiori-02-14.github.io/Homepage/index.html" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/shiori_02_14_" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                しおり🔖
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
+
+                    <a href="https://cotton7.me/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/cotton0025" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                こっとん
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
+
+                    <a href="https://toramutton.me/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/ToraMutton" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                トラマト
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
+
+                    <a href="https://memo.shibadogcap.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/4ba_ba_baba" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                柴犬被り
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
+
+                    <a href="https://thunfasky.com/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/ThunFasky" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                ThunFasky
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
+
+                    <a href="https://ctes091x.net/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/ctes091x" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                綿糸てせ
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
+
+                    <a href="https://www.foriio.com/ia-cg" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/twubcThcUO47Kth" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                あい
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
+
+                    <a href="https://polythos.net/" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between px-5 py-4 bg-white rounded-xl border border-gray-200 hover:border-cyan-500 transition-all duration-300">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://unavatar.io/twitter/Polythos" alt="アイコン" class="w-6 h-6 rounded-md object-cover group-hover:opacity-80 transition-opacity duration-300" />
+                            <span class="text-gray-800 font-bold group-hover:text-cyan-600 transition-colors duration-300">
+                                ぽりとす
+                            </span>
+                        </div>
+                        <span class="text-gray-400 group-hover:text-cyan-500 transition-colors duration-300">→</span>
+                    </a>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- 誕生日を計算するプログラム -->
+    <!-- プログラム部分 -->
     <script>
+        // --- 1. 誕生日カウントダウンのプログラム ---
         function updateCountdown() {
             const now = new Date();
             const currentYear = now.getFullYear();
@@ -278,6 +260,33 @@
         
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        // --- 2. スクロールアニメーションのプログラム ---
+        const observerOptions = {
+            root: null,
+            // 画面の下から50px入った所で発火させる
+            rootMargin: '0px 0px -50px 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 要素が画面に入ったら、透明(opacity-0)と下ズレ(translate-y-10)のクラスを消す
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    // 代わりに不透明(opacity-100)と定位置(translate-y-0)のクラスを付ける
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    
+                    // 一度表示させたら監視を解除する（スクロールを戻しても消えないようにする）
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // 「js-scroll-animate」クラスが付いている要素をすべて監視対象にする
+        document.querySelectorAll('.js-scroll-animate').forEach((element) => {
+            observer.observe(element);
+        });
     </script>
 </body>
 </html>
