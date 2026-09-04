@@ -1,0 +1,73 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webサイトを公開 - みりのサイト</title>
+    <script src="https://cdn.tailwindcss.com" is:inline></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- ヘッダー -->
+    <header class="bg-cyan-500 py-6 shadow-md mb-8">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-2xl font-bold text-left">
+                <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
+            </h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pb-12 max-w-4xl">
+        <!-- 戻るボタン -->
+        <div class="mb-6">
+            <a href="/" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium transition-colors">
+                <span class="mr-2">←</span> トップページに戻る
+            </a>
+        </div>
+        
+        <article class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200">
+            <!-- タイトル部分 -->
+            <div class="mb-10 border-b border-gray-100 pb-8">
+                <p class="text-cyan-600 font-bold mb-2">2026年 9月</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+                    Webサイトを公開
+                </h1>
+            </div>
+            
+            <div class="text-gray-700 leading-relaxed text-lg">
+                <p class="mb-10">
+                    このwebを公開しました!
+                </p>
+
+                <!-- ▼ 参考にしたサイトのセクション ▼ -->
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">
+                            web作成にあたり、お世話になったサイト
+                    </h2>
+                    
+                    <ul class="space-y-3">
+                        <!-- 参考サイト1 -->
+                        <li class="flex items-start">
+                            <span class="text-cyan-500 mr-2">■</span>
+                            <a href="https://zenn.dev/toramutton/books/homepage-guide" target="_blank" rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-800 hover:underline transition-colors">
+                                Astro × Vercelで作る、はじめてのホームページ制作ガイド
+                            </a>
+                        </li>
+                        
+                       
+                    </ul>
+                </div>
+                <!-- ▲ ここまで ▲ -->
+　　　　　　　　　<p class="mb-10">
+                    他にもしおりさんにもしっかり教えてもらって公開にこぎつけました　ありがとうございました
+                </p>
+            </div>
+        </article>
+    </main>
+</body>
+</html>
