@@ -1,8 +1,8 @@
-<html lang="ja">
+\<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TETOECにて映像を制作 | みりのサイト</title>
+    <title>TETOECにて映像を制作 - みりのサイト</title>
     <script src="https://cdn.tailwindcss.com" is:inline></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -13,57 +13,64 @@
 </head>
 
 <body class="bg-gray-50 min-h-screen">
-    <!-- ヘッダー -->
-    <header class="bg-cyan-500 py-6 shadow-md">
+    <!-- 上部の青いヘッダー（トップページと統一） -->
+    <header class="bg-cyan-500 py-6 shadow-md mb-8">
         <div class="container mx-auto px-4 max-w-4xl">
-            <h1 class="text-3xl font-bold text-left">
+            <h1 class="text-2xl font-bold text-left">
                 <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
             </h1>
         </div>
     </header>
 
-    <!-- メインコンテンツ -->
-    <main class="container mx-auto px-4 py-10 max-w-4xl">
-        
+    <main class="container mx-auto px-4 pb-12 max-w-4xl">
         <!-- 戻るボタン -->
-        <a href="/" class="inline-flex items-center text-cyan-600 hover:text-cyan-800 font-bold mb-8 transition-colors group">
-            <span class="transform group-hover:-translate-x-1 transition-transform duration-300">←</span>
-            <span class="ml-2">トップページに戻る</span>
-        </a>
-
-        <!-- 記事のボックス -->
+        <div class="mb-6">
+            <a href="/" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium transition-colors">
+                <span class="mr-2">←</span> トップページに戻る
+            </a>
+        </div>
+        
         <article class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-200">
-            
-            <!-- 記事のタイトル部分 -->
+            <!-- タイトル部分 -->
             <div class="mb-10 border-b border-gray-100 pb-8">
-                <div class="text-sm text-cyan-600 font-bold mb-3">2026年 8月8日・9日</div>
-                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 leading-tight">
+                <p class="text-cyan-600 font-bold mb-2">2026年 8月8日・9日</p>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
                     TETOECにて映像を制作
                 </h1>
-                <p class="text-gray-500 text-lg">
-                    VLL主催のイベントのTETOECでオーバーライドの上映像を制作 
-                    下が作った映像です
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    VLL主催のイベント「TETOEC」で公開された「オーバーライド」の映像作品です。
                 </p>
             </div>
-
-            <!-- 本文エリア (動画のみにシンプル化) -->
-            <div class="text-gray-700 leading-relaxed space-y-8 text-lg">
+            
+            <div class="text-gray-700 leading-relaxed text-lg">
                 
-                <!-- セクション: 制作した動画 -->
-                <div>
-                    <!-- 動画プレーヤー -->
-                    <div class="w-full aspect-video rounded-xl overflow-hidden shadow-sm bg-black">
-                        <video class="w-full h-full object-contain" controls playsinline>
-                            <!-- ★今のファイル名をそのまま指定しました！ -->
-                            <source src="/over.mp4" type="video/mp4">
-                            お使いのブラウザは動画の再生に対応していません。
-                        </video>
-                    </div>
+                <!-- ▼ 動画リンクボタンのセクション ▼ -->
+                <div class="flex flex-col items-center justify-center py-10 bg-gray-50 rounded-xl border border-gray-100">
+                    <p class="text-gray-500 mb-6 text-center">
+                        映像作品は以下のリンクからご覧いただけます。
+                    </p>
+                    
+                    <!-- href="ここの中" を、YouTubeやXなどの実際の動画リンクに書き換えてください -->
+                    <a href="https://youtu.be/A2Gu8AeZdtI" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center px-8 py-4 bg-cyan-500 text-white font-bold rounded-full hover:bg-cyan-600 hover:shadow-md transition-all duration-300">
+                        <!-- 再生マークのアイコン -->
+                        <svg class="w-5 h-5 mr-3 fill-current" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                        </svg>
+                        映像を見る
+                        <span class="ml-2 group-hover:translate-x-1 transition-transform duration-300">→</span>
+                    </a>
                 </div>
+                <!-- ▲ ここまで ▲ -->
 
             </div>
         </article>
-
     </main>
 </body>
 </html>
+```eof
+
+### 設定方法
+コードの中にある **`href="[https://youtube.com/](https://youtube.com/)..."`** の部分を、実際にアップロードした動画のURL（YouTubeやXの投稿URLなど）に書き換えるだけで完成です！
+
+**💡補足**
+もし「別のページに飛ばすのではなく、**このページの画面上でそのままYouTubeを再生できるようにしたい（埋め込みたい）**」という場合は、また別の書き方があるのでお気軽に教えてくださいね！
