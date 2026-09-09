@@ -1,4 +1,4 @@
-<html lang="ja" class="scroll-smooth">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +13,33 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        /* 画面が反転している時、画像(アイコン)だけもう一度反転させて元の色に戻す */
+        html.invert img {
+            filter: invert(100%);
+        }
+        
+        #starry-sky {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        /* 画面が反転した時だけ星空を表示し、星を白く光らせるために再反転 */
+        html.invert #starry-sky {
+            opacity: 1;
+            filter: invert(100%);
+        }
+        
+        /* 星のキラキラアニメーション */
+        @keyframes twinkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.2; transform: scale(0.5); }
+        }
+        .star {
+            animation: twinkle linear infinite;
+        }
     </style>
 </head>
 
-<body class="bg-gray-50 min-h-screen">
+<body class="bg-gray-50 min-h-screen relative">
     <!-- ヘッダー -->
     <header class="bg-cyan-500 py-4 md:py-6 shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 max-w-3xl flex justify-between items-center relative">
@@ -24,7 +47,7 @@
                 <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
             </h1>
             
-            <!-- ★追加: 右上のドロップダウンメニュー（クリック開閉式） -->
+            <!-- 右上のドロップダウンメニュー（クリック開閉式） -->
             <div class="relative">
                 <!-- トグルボタン -->
                 <button id="menu-toggle-btn" class="text-white hover:text-cyan-100 focus:outline-none p-2 transition-colors relative z-50">
@@ -52,8 +75,8 @@
         </div>
     </header>
 
-    <!-- メインコンテンツ -->
-    <main class="container mx-auto px-4 py-12 max-w-3xl overflow-hidden">
+    <!-- 背景の星空より手前に来るように relative z-10 を追加 -->
+    <main class="container mx-auto px-4 py-12 max-w-3xl overflow-hidden relative z-10">
         <div class="flex flex-col">
             
             <!-- 1. 自己紹介 -->
@@ -282,7 +305,7 @@
                     <!-- ▼ 2年のカテゴリ ▼ -->
                     <div>
                         <h3 class="text-lg font-bold text-cyan-600 border-b border-cyan-100 pb-2 mb-4">
-                            2年(Mエリア)
+                            2年
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <!-- 2年前期 -->
@@ -541,6 +564,75 @@
                 toggleMenu();
             }
         });
+
+        // --- 4. 隠しギミック（ダブルクリックで3秒間色反転） ---
+        let lastClickTime = 0;
+        const htmlElement = document.documentElement;
+
+        // 画面上のどこかをクリックした時の処理
+        document.addEventListener('click', (e) => {
+            const currentTime = new Date().getTime();
+            const timeDiff = currentTime - lastClickTime;
+
+            // 前回のクリックから0.5秒以内（500ミリ秒以内）ならダブルクリックと判定
+            if (timeDiff > 0 && timeDiff <= 500) {
+                // すでに反転中なら何もしない
+                if(htmlElement.classList.contains('invert')){
+                    return;
+                }
+
+                // 画面全体にTailwindのinvert（色反転）クラスをつける
+                htmlElement.classList.add('invert', 'transition-all', 'duration-500');
+
+                // 3秒後に元に戻す
+                setTimeout(() => {
+                    htmlElement.classList.remove('invert');
+                }, 3000);
+
+                // ダブルクリック判定のリセット
+                lastClickTime = 0;
+            } else {
+                // 1回目のクリック時間を記録
+                lastClickTime = currentTime;
+            }
+        });
+
+        // --- 5. 星空ギミックの生成 ---
+        const starrySky = document.createElement('div');
+        starrySky.id = 'starry-sky';
+        starrySky.className = 'fixed inset-0 pointer-events-none z-0 overflow-hidden';
+        
+        // 星を150個生成
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'absolute bg-white rounded-full star';
+            
+            // ランダムなサイズ (1px 〜 3px)
+            const size = Math.random() * 2 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            
+            // ランダムな位置
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            
+            // ランダムなアニメーション時間と遅延でバラバラに瞬かせる
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            star.style.animationDelay = `${Math.random() * 3}s`;
+            
+            // たまに少し黄色っぽい星や青っぽい星を混ぜる
+            const colorRand = Math.random();
+            if (colorRand > 0.9) {
+                star.style.backgroundColor = '#fde047'; // yellow-300
+            } else if (colorRand > 0.8) {
+                star.style.backgroundColor = '#bae6fd'; // sky-200
+            }
+
+            starrySky.appendChild(star);
+        }
+        // bodyの先頭に追加 (背景色の上に配置される)
+        document.body.prepend(starrySky);
+
     </script>
 </body>
 </html>
