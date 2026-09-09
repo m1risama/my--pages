@@ -1,0 +1,470 @@
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1年後期 - みりのサイト</title>
+    
+    <!-- サイトのアイコン（ファビコン）の設定 -->
+    <link rel="icon" type="image/png" href="/icon.png">
+    
+    <script src="https://cdn.tailwindcss.com" is:inline></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* スクロールバーを少しオシャレにする設定 */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- ヘッダー -->
+    <header class="bg-cyan-500 py-6 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-2xl font-bold text-left">
+                <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
+            </h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pb-12 pt-8 max-w-4xl">
+        <!-- 戻るボタン -->
+        <div class="mb-6">
+            <!-- ▼ 修正箇所: トップページのuec_reviewの場所に直接戻る ▼ -->
+            <a href="/#uec-review" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium transition-colors">
+                <span class="mr-2">←</span> トップページに戻る
+            </a>
+        </div>
+        
+        <article class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-200">
+            <!-- タイトル部分 -->
+            <div class="mb-8 border-b border-gray-100 pb-6">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+                    1年後期 時間割
+                </h1>
+                <p class="text-gray-500 text-sm">
+                    科目名をクリックすると、該当のレビューまで移動します。
+                </p>
+            </div>
+            
+            <!-- 時間割の表 -->
+            <div class="overflow-x-auto custom-scrollbar pb-4 mb-12">
+                <table class="w-full min-w-[600px] border-collapse text-center">
+                    <thead>
+                        <tr>
+                            <th class="w-16 border border-gray-200 bg-gray-50 p-2 rounded-tl-lg"></th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">月</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">火</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">水</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">木</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold rounded-tr-lg">金</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <!-- 1限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                1限<br><span class="text-xs font-normal text-gray-400">9:00~</span>
+                            </td>
+                            <!-- 月1 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 火1 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 水1 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-wed1" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1">力学</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 木1 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-thu1" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1">宇宙地球科学</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 金1 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                        </tr>
+
+                        <!-- 2限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                2限<br><span class="text-xs font-normal text-gray-400">10:40~</span>
+                            </td>
+                            <!-- 月2 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-mon2" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1">仏語第二</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 火2 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-tue2" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1">線形代数第二</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 水2 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 木2 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 金2 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-fri2" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1">解析学</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- 3限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                3限<br><span class="text-xs font-normal text-gray-400">13:00~</span>
+                            </td>
+                            <!-- 月3 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-mon34" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-sm">基礎科学実験2A/B</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 火3 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-tue3" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-xs">Academic Spoken English Ⅱ</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 水3 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-wed3" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-sm">数学演習第二</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 木3 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-thu3" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-xs">基礎プログラミングおよび演習</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 金3 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-fri3" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-sm">微分積分学第二</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- 4限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                4限<br><span class="text-xs font-normal text-gray-400">14:40~</span>
+                            </td>
+                            <!-- 月4 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-mon34" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-sm">基礎科学実験2A/B</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 火4 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-tue4" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-sm">物理学概論第二</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 水4 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 木4 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-thu4" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-xs">健康・体力づくり実習</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 金4 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-fri4" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1 text-xs">Academic Written English Ⅱ</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- 5限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle rounded-bl-lg">
+                                5限<br><span class="text-xs font-normal text-gray-400">16:15~</span>
+                            </td>
+                            <!-- 月5 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 火5 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 水5 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <!-- 木5 -->
+                            <td class="border border-gray-200 p-0 h-24 align-top hover:bg-gray-50 transition-colors">
+                                <a href="#review-thu5" class="block w-full h-full p-2 cursor-pointer group">
+                                    <div class="font-bold text-gray-800 group-hover:text-cyan-600 mb-1">著作権</div>
+                                    <div class="text-xs text-gray-500"></div>
+                                </a>
+                            </td>
+                            <!-- 金5 -->
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors rounded-br-lg"></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 授業詳細レビュー -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-cyan-500 pb-2 mb-6 inline-block">
+                    授業詳細レビュー
+                </h2>
+
+                <div class="space-y-6">
+
+                    <!-- レビュー枠：月2 仏語第二 -->
+                    <div id="review-mon2" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">月2</span>
+                                仏語第二
+                                <span class="text-gray-500 text-sm font-normal ml-2">(hsgw先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 font-bold rounded-full text-sm border border-yellow-200">
+                                可
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">前期と同じです。出席30点小テスト20点期末テスト50点
+小テストは答えの決まってる例文を覚えて発音する
+期末テストは文法メイン。丸暗記しよう。</p>
+                    </div>
+
+                    <!-- レビュー枠：月3・4 基礎科学実験2A/B -->
+                    <div id="review-mon34" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">月3・4</span>
+                                基礎科学実験2A/B
+                            </h3>
+                            <!-- バッジなし、A・Bそれぞれの評価は下のテキスト内で説明 -->
+                        </div>
+                        
+                        <div class="mt-4 mb-4">
+                            <h4 class="font-bold text-gray-800 border-b border-gray-300 pb-1 mb-2 inline-block">A（物理系） <span class="text-blue-600 font-normal ml-2">評価: 良</span></h4>
+                            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">自分がやったのは放射線、光速度、ヤング率
+謁見はLatexにどれだけ慣れてるかと書式をしっかり守るゲームです。 今年から違うらしいけど。</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-bold text-gray-800 border-b border-gray-300 pb-1 mb-2 inline-block">B（化学系） <span class="text-purple-600 font-normal ml-2">評価: 秀</span></h4>
+                            <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">後期は計算科学、反応速度、比色、定性分析、赤外がある。
+真面目にやったら落とさない。 謁見でやるような不確かさをやっとくといい評価がきやすい。不確かさまでやる人はまれなのでやったらS来ると思う。</p>
+                        </div>
+                    </div>
+
+                    <!-- レビュー枠：火2 線形代数第二 -->
+                    <div id="review-tue2" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">火2</span>
+                                線形代数第二
+                                <span class="text-gray-500 text-sm font-normal ml-2">(nkn先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 font-bold rounded-full text-sm border border-yellow-200">
+                                可
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">来年から違う人らしいので割愛</p>
+                    </div>
+
+                    <!-- レビュー枠：火3 Academic Spoken English Ⅱ -->
+                    <div id="review-tue3" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">火3</span>
+                                Academic Spoken English Ⅱ
+                                <span class="text-gray-500 text-sm font-normal ml-2">(じょー先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 font-bold rounded-full text-sm border border-blue-200">
+                                良
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">前期と同じ。毎週課題をきちんと出そう。評価の根幹はやはり最後の課題。2つの相反する意見を交えながら自分の意見を主張する。いわゆる2-sides。</p>
+                    </div>
+
+                    <!-- レビュー枠：火4 物理学概論第二 -->
+                    <div id="review-tue4" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">火4</span>
+                                物理学概論第二
+                                <span class="text-gray-500 text-sm font-normal ml-2">(nmr先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 font-bold rounded-full text-sm border border-blue-200">
+                                良
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">前期と同じ。熱力と電磁気です。舐めてかかるな。熱力は中間が簡単すぎて差が出ず、期末舐めてたら良になってました。相変わらずひょんちゃんは神です。</p>
+                    </div>
+
+                    <!-- レビュー枠：水1 力学 -->
+                    <div id="review-wed1" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">水1</span>
+                                力学
+                                <span class="text-gray-500 text-sm font-normal ml-2">(td先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 font-bold rounded-full text-sm border border-yellow-200">
+                                可
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">基本オンデマンド。対面も出席はなし。毎週の課題を遅れずに出そう。期末はオンデマンドでレポート形式のテスト。何回か遅れて出したら可でした。</p>
+                    </div>
+
+                    <!-- レビュー枠：水3 数学演習第二 -->
+                    <div id="review-wed3" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">水3</span>
+                                数学演習第二
+                                <span class="text-gray-500 text-sm font-normal ml-2">(忘れた)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 font-bold rounded-full text-sm border border-blue-200">
+                                良
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">前期と仕様は同じ。出席は開始30分後に呼ばれて挙手し、レポート課題を解いて次の日までに提出。どちらかがないと欠席扱い。テストはむずくてみんな解けないので案外単位きます。</p>
+                    </div>
+
+                    <!-- レビュー枠：木1 宇宙地球科学 -->
+                    <div id="review-thu1" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">木1</span>
+                                宇宙地球科学
+                                <span class="text-gray-500 text-sm font-normal ml-2">(kkt先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 font-bold rounded-full text-sm border border-green-200">
+                                優
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">15回の授業中4回ある小テストが出席代わり。小テスト3回以上出席で単位がくる可能性がある。成績は小テストの結果。4回中良い3回のテストの点で決まる。初回は自力で、あとは友達使ったら優でした。おそらく秀とる人は全部満点だと思います。一応任意のレポートがあったんですが出してない人も秀来てたんで本当に救済でしょう。</p>
+                    </div>
+
+                    <!-- レビュー枠：木3 基礎プログラミングおよび演習 -->
+                    <div id="review-thu3" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">木3</span>
+                                基礎プログラミングおよび演習
+                                <span class="text-gray-500 text-sm font-normal ml-2">(wtnb先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 font-bold rounded-full text-sm border border-blue-200">
+                                良
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">10回rubyやって5回c言語やる。コンリテとほぼ同じ。出席はpcログインしたら。assignmentは必ず出す。テストは確認問題がちゃんとできれば解けます。あんまり資料の検索は役に立たない。</p>
+                    </div>
+
+                    <!-- レビュー枠：木4 健康・体力づくり実習 -->
+                    <div id="review-thu4" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">木4</span>
+                                健康・体力づくり実習
+                            </h3>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 font-bold rounded-full text-sm border border-blue-200">
+                                良
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">ソフトボール、サッカー、テニス、ゴルフから選ぶ。テニスゴルフは抽選。他は好きに選べる。1欠席で3点、1遅刻で1点引かれて10点以上引かれるとアウト。成績はレポート。毎回コツコツ書こう。レポートはちゃんと埋めてね。</p>
+                    </div>
+
+                    <!-- レビュー枠：木5 著作権 -->
+                    <div id="review-thu5" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">木5</span>
+                                著作権
+                            </h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 font-bold rounded-full text-sm border border-green-200">
+                                優
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">授業中に小レポートをやることをお勧めします。最終レポートは遅れて出したけど優でした。結構面白い話をしていることが多いです。
+7.8クラの人は多摩グラに行ってるので確定遅刻ですがそこは配慮してくれます。ただ運動した後だということと寒い時期になると暖房がききまくって眠くなる。</p>
+                    </div>
+
+                    <!-- レビュー枠：金2 解析学 -->
+                    <div id="review-fri2" class="bg-gray-50 rounded-xl p-5 border border-red-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">金2</span>
+                                解析学
+                                <span class="text-gray-500 text-sm font-normal ml-2">(kjs先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-red-100 text-red-800 font-bold rounded-full text-sm border border-red-200">
+                                不可
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">ここで不可が登場。小テスト40点期末60点。
+課題だそう。(戒め)。あと授業終わりに小テストがある。内容は前回やった内容。ノートを写メって提出するのを忘れるな。課題点0にされるぞ。マジであの先生はハズレなので当たった人どんまい。期末はそこまで難しくはない←え？</p>
+                    </div>
+
+                    <!-- レビュー枠：金3 微分積分学第二 -->
+                    <div id="review-fri3" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">金3</span>
+                                微分積分学第二
+                                <span class="text-gray-500 text-sm font-normal ml-2">(knsd先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 font-bold rounded-full text-sm border border-green-200">
+                                優
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">偏微分と重積分扱う。過去問やればある程度できる。授業は聞く価値がないほど分かりにくいし、声がasmrなので聞いてなかった。自分はヨビノリのお世話になった。他にもヨビノリにはお世話になる。化学とか物理とか。はたまた2年で扱うフーリエ解析とか。</p>
+                    </div>
+
+                    <!-- レビュー枠：金4 Academic Written English Ⅱ -->
+                    <div id="review-fri4" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">金4</span>
+                                Academic Written English Ⅱ
+                                <span class="text-gray-500 text-sm font-normal ml-2">(今道先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 font-bold rounded-full text-sm border border-yellow-200">
+                                可
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">前期と同じ。悪名高き今道先生は後期になって弱体化。期末テストはある。単語の意味を英英辞典みたいに答えるものとあとは100word要約。テスト出来なくてもfinalessayが良くて課題出してりゃ単位くる。前期は辞書ありだったのに後期は辞書なしです。</p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </article>
+    </main>
+</body>
+</html>

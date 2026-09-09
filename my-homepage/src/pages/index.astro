@@ -1,4 +1,4 @@
-<html lang="ja">
+<html lang="ja" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +18,37 @@
 
 <body class="bg-gray-50 min-h-screen">
     <!-- ヘッダー -->
-    <header class="bg-cyan-500 py-6 shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 max-w-3xl">
-            <h1 class="text-3xl font-bold text-left">
+    <header class="bg-cyan-500 py-4 md:py-6 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 max-w-3xl flex justify-between items-center relative">
+            <h1 class="text-2xl md:text-3xl font-bold text-left">
                 <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
             </h1>
+            
+            <!-- ★追加: 右上のドロップダウンメニュー（クリック開閉式） -->
+            <div class="relative">
+                <!-- トグルボタン -->
+                <button id="menu-toggle-btn" class="text-white hover:text-cyan-100 focus:outline-none p-2 transition-colors relative z-50">
+                    <!-- ハンバーガーアイコン -->
+                    <svg id="icon-menu" class="w-7 h-7 md:w-8 md:h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                    <!-- バツアイコン (初期非表示) -->
+                    <svg id="icon-close" class="w-7 h-7 md:w-8 md:h-8 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                
+                <!-- ドロップダウンの中身（クリックで表示） -->
+                <div id="dropdown-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg opacity-0 invisible transition-all duration-300 transform origin-top-right scale-95 z-40 overflow-hidden border border-gray-100">
+                    <a href="#profile" class="js-menu-link block px-4 py-3 text-sm font-bold text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors border-b border-gray-50">自己紹介</a>
+                    <a href="#sns" class="js-menu-link block px-4 py-3 text-sm font-bold text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors border-b border-gray-50">SNS</a>
+                    <a href="#works" class="js-menu-link block px-4 py-3 text-sm font-bold text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors border-b border-gray-50">やったこと</a>
+                    <a href="#games" class="js-menu-link block px-4 py-3 text-sm font-bold text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors border-b border-gray-50">好きなゲーム</a>
+                    <a href="#birthday" class="js-menu-link block px-4 py-3 text-sm font-bold text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors border-b border-gray-50">誕生日まで</a>
+                    <a href="#uec-review" class="js-menu-link block px-4 py-3 text-sm font-bold text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors border-b border-gray-50">uec_review</a>
+                    <a href="#links" class="js-menu-link block px-4 py-3 text-sm font-bold text-gray-700 hover:bg-cyan-50 hover:text-cyan-600 transition-colors">他の人のサイト</a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -31,7 +57,7 @@
         <div class="flex flex-col">
             
             <!-- 1. 自己紹介 -->
-            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
+            <div id="profile" class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate scroll-mt-28">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-4">自己紹介</h2>
                 <p class="text-gray-700 leading-relaxed text-lg">
                     電気通信大学情報理工学域Ⅱ類M科 MMA,VLLに所属<br>
@@ -41,7 +67,7 @@
             </div>
 
             <!-- 2. SNS -->
-            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate" style="transition-delay: 100ms;">
+            <div id="sns" class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate scroll-mt-28" style="transition-delay: 100ms;">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">SNS</h2>
                 
                 <p class="text-lg text-gray-700 mb-4">・X(旧twitter)</p>
@@ -71,7 +97,7 @@
             </div>
 
             <!-- 3. やったこと -->
-            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
+            <div id="works" class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate scroll-mt-28">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     やったこと
                 </h2>
@@ -110,7 +136,7 @@
             </div>
 
             <!-- 4. 好きなゲーム -->
-            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
+            <div id="games" class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate scroll-mt-28">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     好きなゲーム
                 </h2>
@@ -184,7 +210,7 @@
             </div>
 
             <!-- 5. 誕生日カウントダウン -->
-            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
+            <div id="birthday" class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate scroll-mt-28">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     誕生日まで
                 </h2>
@@ -219,7 +245,7 @@
             </div>
 
             <!-- 6. uec_review（カテゴリ分け） -->
-            <div class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
+            <div id="uec-review" class="mb-16 opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate scroll-mt-28">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     uec_review
                 </h2>
@@ -231,7 +257,7 @@
                             1年(8クラス)
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- ▼ 修正箇所: リンク先を /1zenki に変更 ▼ -->
+                            <!-- 1年前期 -->
                             <a href="/1zenki" class="block bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cyan-500 hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="flex justify-between items-center">
                                     <h4 class="text-lg font-bold text-gray-800 group-hover:text-cyan-600 transition-colors duration-300">
@@ -241,7 +267,7 @@
                                 </div>
                             </a>
 
-                            <!-- ▼ 修正箇所: リンク先を /1kouki に変更 ▼ -->
+                            <!-- 1年後期 -->
                             <a href="/1kouki" class="block bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cyan-500 hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="flex justify-between items-center">
                                     <h4 class="text-lg font-bold text-gray-800 group-hover:text-cyan-600 transition-colors duration-300">
@@ -256,10 +282,10 @@
                     <!-- ▼ 2年のカテゴリ ▼ -->
                     <div>
                         <h3 class="text-lg font-bold text-cyan-600 border-b border-cyan-100 pb-2 mb-4">
-                            2年
+                            2年(Mエリア)
                         </h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <!-- ▼ 修正箇所: リンク先を /2zenki に変更 ▼ -->
+                            <!-- 2年前期 -->
                             <a href="/2zenki" class="block bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-cyan-500 hover:-translate-y-1 transition-all duration-300 group">
                                 <div class="flex justify-between items-center">
                                     <h4 class="text-lg font-bold text-gray-800 group-hover:text-cyan-600 transition-colors duration-300">
@@ -274,7 +300,7 @@
             </div>
 
             <!-- 7. 他の人のサイト -->
-            <div class="opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate">
+            <div id="links" class="opacity-0 translate-y-10 transition-all duration-1000 ease-out js-scroll-animate scroll-mt-28">
                 <h2 class="text-2xl font-bold text-gray-800 text-left mb-6">
                     他の人のサイト
                 </h2>
@@ -470,6 +496,50 @@
         // 「js-scroll-animate」クラスが付いている要素をすべて監視対象にする
         document.querySelectorAll('.js-scroll-animate').forEach((element) => {
             observer.observe(element);
+        });
+
+        // --- 3. ドロップダウンメニューの開閉プログラム ---
+        const menuToggleBtn = document.getElementById('menu-toggle-btn');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const menuLinks = document.querySelectorAll('.js-menu-link');
+
+        function toggleMenu() {
+            const isClosed = dropdownMenu.classList.contains('invisible');
+            if (isClosed) {
+                // メニューを開く
+                dropdownMenu.classList.remove('invisible', 'opacity-0', 'scale-95');
+                dropdownMenu.classList.add('visible', 'opacity-100', 'scale-100');
+                // アイコンを×に変更
+                iconMenu.classList.add('hidden');
+                iconClose.classList.remove('hidden');
+            } else {
+                // メニューを閉じる
+                dropdownMenu.classList.add('invisible', 'opacity-0', 'scale-95');
+                dropdownMenu.classList.remove('visible', 'opacity-100', 'scale-100');
+                // アイコンを三本線に戻す
+                iconMenu.classList.remove('hidden');
+                iconClose.classList.add('hidden');
+            }
+        }
+
+        // ボタンクリックでトグル
+        menuToggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // イベントのバブリングを防ぐ（ドキュメントクリックで閉じないように）
+            toggleMenu();
+        });
+
+        // リンクをクリックしたら自動的に閉じる
+        menuLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // メニューの外側をクリックしたら閉じる
+        document.addEventListener('click', (e) => {
+            if (!dropdownMenu.classList.contains('invisible') && !dropdownMenu.contains(e.target) && !menuToggleBtn.contains(e.target)) {
+                toggleMenu();
+            }
         });
     </script>
 </body>
