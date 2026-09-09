@@ -12,34 +12,60 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            /* 背景画像のトランジションを滑らかに */
+            transition: background-image 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
         }
-        /* 画面が反転している時、画像(アイコン)だけもう一度反転させて元の色に戻す */
-        html.invert img {
-            filter: invert(100%);
+
+        /* --- ギミック発動時（.gimmick-active）のスタイル --- */
+        
+        /* 1. 背景を画像に変更 */
+        body.gimmick-active {
+            background-image: url('/24517009_l.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #ffffff; /* 全体の基本文字色を白に */
+        }
+
+        /* 2. 背景が画像の時は、白いカード背景を半透明の黒にして文字を見やすくする */
+        body.gimmick-active .bg-white {
+            background-color: rgba(0, 0, 0, 0.6) !important;
+            border-color: rgba(255, 255, 255, 0.2) !important;
         }
         
-        #starry-sky {
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        /* 画面が反転した時だけ星空を表示し、星を白く光らせるために再反転 */
-        html.invert #starry-sky {
-            opacity: 1;
-            filter: invert(100%);
+        /* 3. 各種テキストの色を白や明るい色に上書き */
+        body.gimmick-active .text-gray-800,
+        body.gimmick-active .text-gray-700,
+        body.gimmick-active .text-gray-600 {
+            color: #f8fafc !important; /* Tailwindのslate-50くらい */
         }
         
-        /* 星のキラキラアニメーション */
-        @keyframes twinkle {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.2; transform: scale(0.5); }
+        body.gimmick-active .text-cyan-600 {
+            color: #67e8f9 !important; /* cyan-300: 暗い背景で映える水色に */
         }
-        .star {
-            animation: twinkle linear infinite;
+        
+        body.gimmick-active h2.text-gray-800 {
+            color: #ffffff !important;
+        }
+
+        body.gimmick-active .border-gray-100,
+        body.gimmick-active .border-gray-50 {
+            border-color: rgba(255, 255, 255, 0.1) !important;
+        }
+        
+        body.gimmick-active .bg-gray-50 {
+            background-color: transparent !important;
+        }
+
+        /* ヘッダーの色も少し透明にして馴染ませる */
+        body.gimmick-active header {
+            background-color: rgba(6, 182, 212, 0.8) !important; /* cyan-500の透過 */
+            backdrop-filter: blur(8px);
         }
     </style>
 </head>
 
-<body class="bg-gray-50 min-h-screen relative">
+<body class="bg-gray-50 min-h-screen relative transition-colors duration-500">
     <!-- ヘッダー -->
     <header class="bg-cyan-500 py-4 md:py-6 shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-4 max-w-3xl flex justify-between items-center relative">
@@ -565,9 +591,9 @@
             }
         });
 
-        // --- 4. 隠しギミック（ダブルクリックで3秒間色反転） ---
+        // --- 4. 隠しギミック（ダブルクリックで3秒間 背景画像＆文字白化） ---
         let lastClickTime = 0;
-        const htmlElement = document.documentElement;
+        const bodyElement = document.body;
 
         // 画面上のどこかをクリックした時の処理
         document.addEventListener('click', (e) => {
@@ -576,17 +602,17 @@
 
             // 前回のクリックから0.5秒以内（500ミリ秒以内）ならダブルクリックと判定
             if (timeDiff > 0 && timeDiff <= 500) {
-                // すでに反転中なら何もしない
-                if(htmlElement.classList.contains('invert')){
+                // すでにギミック発動中なら何もしない
+                if(bodyElement.classList.contains('gimmick-active')){
                     return;
                 }
 
-                // 画面全体にTailwindのinvert（色反転）クラスをつける
-                htmlElement.classList.add('invert', 'transition-all', 'duration-500');
+                // bodyにギミック発動クラスをつける
+                bodyElement.classList.add('gimmick-active');
 
                 // 3秒後に元に戻す
                 setTimeout(() => {
-                    htmlElement.classList.remove('invert');
+                    bodyElement.classList.remove('gimmick-active');
                 }, 3000);
 
                 // ダブルクリック判定のリセット
@@ -596,42 +622,6 @@
                 lastClickTime = currentTime;
             }
         });
-
-        // --- 5. 星空ギミックの生成 ---
-        const starrySky = document.createElement('div');
-        starrySky.id = 'starry-sky';
-        starrySky.className = 'fixed inset-0 pointer-events-none z-0 overflow-hidden';
-        
-        // 星を150個生成
-        for (let i = 0; i < 150; i++) {
-            const star = document.createElement('div');
-            star.className = 'absolute bg-white rounded-full star';
-            
-            // ランダムなサイズ (1px 〜 3px)
-            const size = Math.random() * 2 + 1;
-            star.style.width = `${size}px`;
-            star.style.height = `${size}px`;
-            
-            // ランダムな位置
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            
-            // ランダムなアニメーション時間と遅延でバラバラに瞬かせる
-            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            star.style.animationDelay = `${Math.random() * 3}s`;
-            
-            // たまに少し黄色っぽい星や青っぽい星を混ぜる
-            const colorRand = Math.random();
-            if (colorRand > 0.9) {
-                star.style.backgroundColor = '#fde047'; // yellow-300
-            } else if (colorRand > 0.8) {
-                star.style.backgroundColor = '#bae6fd'; // sky-200
-            }
-
-            starrySky.appendChild(star);
-        }
-        // bodyの先頭に追加 (背景色の上に配置される)
-        document.body.prepend(starrySky);
 
     </script>
 </body>
