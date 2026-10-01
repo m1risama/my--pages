@@ -1,0 +1,178 @@
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2年後期 - みりのサイト</title>
+    
+    <!-- サイトのアイコン（ファビコン）の設定 -->
+    <link rel="icon" type="image/png" href="/icon.png">
+    
+    <script src="https://cdn.tailwindcss.com" is:inline></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* スクロールバーを少しオシャレにする設定 */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- ヘッダー -->
+    <header class="bg-cyan-500 py-6 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-2xl font-bold text-left">
+                <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
+            </h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pb-12 pt-8 max-w-4xl">
+        <!-- 戻るボタン -->
+        <div class="mb-6">
+            <a href="/#uec-review" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium transition-colors">
+                <span class="mr-2">←</span> トップページに戻る
+            </a>
+        </div>
+        
+        <article class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-200">
+            <!-- タイトル部分 -->
+            <div class="mb-8 border-b border-gray-100 pb-6">
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2">
+                    2年後期 時間割
+                </h1>
+                <p class="text-gray-500 text-sm flex items-center">
+                    <span class="inline-block w-2 h-2 rounded-full bg-yellow-400 mr-2 animate-pulse"></span>
+                    現在受講中です。学期が終了次第、レビューを更新します！
+                </p>
+            </div>
+            
+            <!-- 時間割の表 (空枠を用意) -->
+            <div class="overflow-x-auto custom-scrollbar pb-4 mb-12 opacity-50 relative">
+                <!-- 準備中を示すオーバーレイ -->
+                <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                    <div class="bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full shadow-sm border border-gray-200 text-gray-700 font-bold tracking-widest">
+                        COMING SOON...
+                    </div>
+                </div>
+
+                <table class="w-full min-w-[600px] border-collapse text-center">
+                    <thead>
+                        <tr>
+                            <th class="w-16 border border-gray-200 bg-gray-50 p-2 rounded-tl-lg"></th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">月</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">火</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">水</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold">木</th>
+                            <th class="w-1/5 border border-gray-200 bg-cyan-50 text-cyan-700 py-3 font-bold rounded-tr-lg">金</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <!-- 1限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                1限<br><span class="text-xs font-normal text-gray-400">9:00~</span>
+                            </td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                        </tr>
+
+                        <!-- 2限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                2限<br><span class="text-xs font-normal text-gray-400">10:40~</span>
+                            </td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                        </tr>
+
+                        <!-- 3限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                3限<br><span class="text-xs font-normal text-gray-400">13:00~</span>
+                            </td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                        </tr>
+
+                        <!-- 4限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle">
+                                4限<br><span class="text-xs font-normal text-gray-400">14:40~</span>
+                            </td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                        </tr>
+
+                        <!-- 5限 -->
+                        <tr>
+                            <td class="border border-gray-200 bg-gray-50 text-gray-600 font-bold p-2 h-24 align-middle rounded-bl-lg">
+                                5限<br><span class="text-xs font-normal text-gray-400">16:15~</span>
+                            </td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors"></td>
+                            <td class="border border-gray-200 p-2 h-24 align-top hover:bg-gray-50 transition-colors rounded-br-lg"></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 授業詳細レビュー -->
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-cyan-500 pb-2 mb-6 inline-block">
+                    授業詳細レビュー
+                </h2>
+
+                <div class="bg-gray-50 rounded-xl p-8 border border-gray-200 border-dashed text-center">
+                    <p class="text-gray-500 mb-2">2年後期の授業はまだ終わっていません。</p>
+                    <p class="text-gray-500">学期が終了して成績が出たら、ここに各授業のレビューを書いていきます！</p>
+                </div>
+
+                <!-- 
+                【後で追記する時のためのテンプレート】
+                
+                <div class="space-y-6 mt-6">
+                    <div id="review-example" class="bg-gray-50 rounded-xl p-5 border border-gray-200 scroll-mt-28">
+                        <div class="flex flex-wrap items-center justify-between mb-3 border-b border-gray-200 pb-3 gap-2">
+                            <h3 class="text-lg font-bold text-gray-800 flex items-center">
+                                <span class="bg-cyan-100 text-cyan-700 px-2 py-1 rounded text-sm mr-3">月1</span>
+                                科目名
+                                <span class="text-gray-500 text-sm font-normal ml-2">(〇〇先生)</span>
+                            </h3>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 font-bold rounded-full text-sm border border-green-200">
+                                優
+                            </span>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">ここにレビューを書きます。</p>
+                    </div>
+                </div>
+                -->
+            </div>
+            
+        </article>
+    </main>
+</body>
+</html>
