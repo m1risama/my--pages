@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>好きな楽曲 (学マス) - みりのサイト</title>
+    
+    <!-- サイトのアイコン（ファビコン）の設定 -->
+    <link rel="icon" type="image/png" href="/icon.png">
+    
+    <script src="https://cdn.tailwindcss.com" is:inline></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <!-- ヘッダー -->
+    <header class="bg-cyan-500 py-6 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h1 class="text-2xl font-bold text-left">
+                <a href="/" class="text-white hover:text-cyan-100 transition-colors duration-300">みりのサイト</a>
+            </h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 pb-12 pt-8 max-w-4xl">
+        <!-- 戻るボタン -->
+        <div class="mb-6">
+            <!-- トップページの「好きなゲーム」セクションへ戻る -->
+            <a href="/#games" class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-medium transition-colors">
+                <span class="mr-2">←</span> 好きなゲーム一覧に戻る
+            </a>
+        </div>
+        
+        <article class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-gray-200">
+            <!-- タイトル部分 -->
+            <div class="mb-8 border-b border-gray-100 pb-6 flex items-center gap-4">
+                <div class="w-16 h-16 rounded-xl overflow-hidden shadow-sm bg-gray-100 border border-gray-200 flex-shrink-0">
+                    <img src="/gakumasu.jpg" alt="学マス" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100x100/orange/white?text=IDOL'">
+                </div>
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-1">
+                        学園アイドルマスター 好きな楽曲
+                    </h1>
+                    <p class="text-gray-500 text-sm">
+                        特にお気に入りの楽曲とその感想をまとめています！
+                    </p>
+                </div>
+            </div>
+
+            <!-- 楽曲リスト -->
+            <div class="space-y-6">
+                
+                <!-- 楽曲1 (千奈) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-orange-300 transition-colors">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl overflow-hidden shadow-sm border border-orange-200 flex-shrink-0">
+                        <img src="/soratoyakusoku.webp" alt="空と約束" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/ffedd5/ea580c?text=China'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">空と約束</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">倉本千奈 </p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                           初めて聞いたときこんなに大きくなって(泣き)みたいな感覚になる。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 楽曲2 (佑芽) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-rose-300 transition-colors">
+                    <div class="w-16 h-16 bg-rose-100 rounded-xl overflow-hidden shadow-sm border border-rose-200 flex-shrink-0">
+                        <img src="/suisai.jpg" alt="真っ白いページと水彩の主人公" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/ffe4e6/e11d48?text=Ume'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">真っ白いページと水彩の主人公</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">花海佑芽</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            聞いてるこっちが主人公になった気分になる神曲。ライブMVすっと見ちゃう。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 楽曲3 (リーリヤ) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-blue-300 transition-colors">
+                    <div class="w-16 h-16 bg-blue-50 rounded-xl overflow-hidden shadow-sm border border-blue-200 flex-shrink-0">
+                        <img src="/kyokkou.jpg" alt="極光" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/eff6ff/3b82f6?text=Lilja'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">極光</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">葛城リーリヤ </p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            イントロでもう好きになった。かっこよすぎるわ。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 楽曲4 (千奈・リーリヤ・莉波) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-pink-300 transition-colors">
+                    <div class="w-16 h-16 bg-pink-50 rounded-xl overflow-hidden shadow-sm border border-pink-200 flex-shrink-0">
+                        <img src="/hauoba.jpg" alt="Howling over the world" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/fce7f3/db2777?text=HOTW'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Howling over the world</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">倉本千奈、葛城リーリヤ、姫崎莉波</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            千奈とかリーリヤ好きになった楽曲。なんかすごいかっこいい(語彙力)
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 楽曲5 (美鈴) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-indigo-300 transition-colors">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-xl overflow-hidden shadow-sm border border-indigo-200 flex-shrink-0">
+                        <img src="/veil.jpg" alt="VEIL" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/e0e7ff/4f46e5?text=VEIL'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">VEIL</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">秦谷美鈴</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            アイドルとは思えない治安の悪い曲からしか得られない栄養がある。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 楽曲6 (手毬・美鈴) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-indigo-300 transition-colors">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-xl overflow-hidden shadow-sm border border-indigo-200 flex-shrink-0">
+                        <img src="/doukoku.jpg" alt="慟哭のコンチェルト" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/e0e7ff/4338ca?text=Doukoku'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">慟哭のコンチェルト</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">月村手毬、秦谷美鈴</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            標Finalでお出しされたときの腕をてくてく歩くのが好きです。あ、もちろん曲も大好きですよ。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 楽曲7 (咲季) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-red-300 transition-colors">
+                    <div class="w-16 h-16 bg-red-100 rounded-xl overflow-hidden shadow-sm border border-red-200 flex-shrink-0">
+                        <img src="/tryitnow.jpg" alt="Try it now" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/fee2e2/dc2626?text=Saki'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">Try it now</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">花海咲季</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            初めて聞いたのはH.I.F本戦でinstrument聞いたときかな、かっこいいなーと思って聞き始めた。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 楽曲8 (咲季・佑芽) -->
+                <div class="bg-gray-50 rounded-xl p-5 border border-gray-200 flex flex-col sm:flex-row items-start sm:items-center gap-5 hover:border-red-300 transition-colors">
+                    <div class="w-16 h-16 bg-red-100 rounded-xl overflow-hidden shadow-sm border border-red-200 flex-shrink-0">
+                        <img src="/kurosu.jpg" alt="クロスファイア" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/128x128/fee2e2/e11d48?text=Cross'">
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-gray-800 mb-1">クロスファイア</h3>
+                        <p class="text-sm text-gray-500 mb-3 border-b border-gray-200 pb-2">花海咲季、花海佑芽</p>
+                        <p class="text-gray-700 text-sm leading-relaxed">
+                            わー咲季と佑芽が一緒にユニット組んでるー!ってなりました。
+                        </p>
+                    </div>
+                </div>
+
+                
+
+            </div>
+            
+        </article>
+    </main>
+</body>
+</html>
